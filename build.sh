@@ -67,13 +67,13 @@ Build Started: [See Progress]("$ci_url")"
         python3 /drone/src/dependency_cloner.py
     fi
     lunch "$rom_vendor_name"_"$device"-userdebug >/dev/null  2>&1
-    mka bacon -j64 | grep "$device"
+    mka bootimage -j64 | grep "$device"
     BUILD_END=$(date +"%s")
     BUILD_DIFF=$((BUILD_END - BUILD_START))
 
-    export finalzip_path=$(ls "$outdir"/*201*.zip | tail -n -1)
-    export zip_name=$(echo "$finalzip_path" | sed "s|"$outdir"/||")
-    export tag=$( echo "$zip_name" | sed 's|.zip||')
+    export finalzip_path=$(ls "$outdir"/boot.img | tail -n -1)
+    export bootimage=$(echo "$finalzip_path" | sed "s|"$outdir"/||")
+    export tag=$( echo "$bootimage")
     if [ -e "$finalzip_path" ]; then
         echo "Build completed successfully in $((BUILD_DIFF / 60)) minute(s) and $((BUILD_DIFF % 60)) seconds"
 
