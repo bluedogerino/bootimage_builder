@@ -13,7 +13,7 @@ This repo is exclusively for [drone ci](https://cloud.drone.io/) to build ROM wi
 **4.** Telegram bot token.
 
 **5.** A GitHub repo on your ___main account___ where your builds will be uploaded.
-
+3
 
 ## How to Setup
 
