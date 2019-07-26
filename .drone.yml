@@ -13,4 +13,3 @@ steps:
       from_secret: GITHUB_TOKEN
   commands:
   - bash ./setup.sh
-  - echo "empty"
